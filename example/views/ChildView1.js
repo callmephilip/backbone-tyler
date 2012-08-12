@@ -1,4 +1,4 @@
-define([], function(){
+define(["Backbone","Handlebars"], function(Backbone){
   
   var ChildView1 = Backbone.View.extend({
     tagName:  "div",
