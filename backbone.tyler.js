@@ -1,4 +1,7 @@
-(function(Backbone, Handlebars){
+//     backbone.tyler 0.1
+//     (c) 2012 Philip Nuzhnyi
+
+(function(Backbone, Handlebars, require){
 
 	/* handlebars */
 
@@ -42,4 +45,4 @@
 		}
 	});	
 
-})(Backbone, Handlebars);
+})(Backbone, Handlebars, require);
