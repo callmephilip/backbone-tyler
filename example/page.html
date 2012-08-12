@@ -1,0 +1,74 @@
+<html>
+<body>
+	
+	<div id="container"></div>
+
+	<script type="text/javascript" src="libs/require.js"></script>
+	<script type="text/javascript">
+  		requirejs.config({
+    		//baseUrl: "/another/path",
+    		paths: {
+        		"Backbone": "./libs/backbone",
+    			"Underscore": "./libs/underscore",
+    			"jQuery": "./libs/jquery",
+    			"Handlebars": "./libs/handlebars",
+    			"backbone.tyler": "./libs/backbone.tyler"
+    		},
+    		shim: {
+    			'jQuery' : {
+    				exports: 'jQuery'
+    			},
+        		'Backbone': {
+            		deps: ['jQuery', 'Underscore'],
+            		exports: 'Backbone'
+        		},
+        		'backbone.tyler': ['Backbone',"Handlebars"]
+   
+        	},
+    		waitSeconds: 15
+  		});
+  	
+	</script>
+
+	<script type="text/javascript">
+		
+  			require(["jQuery", "views/CompositeView"],
+    			function($, CompositeView) {
+    				$(document).ready(function(){
+						$("#container").html(new CompositeView().render());
+    				});
+    			}
+  			);
+	
+	</script>
+
+
+	<!-- 
+		Handlebars Templates 
+		
+		NB: You should use text plugin for requirejs to load templates. 
+		    I'm using inlined templates here since text plugin cannot load templates from the local file system as far as i can tell  
+	-->
+
+	<script type="text/template" id="template-container">
+		<h2>This is a container</h2>
+		<hr>
+		<div style="float:left;">
+			{{view "views/ChildView1" name="Stranger" }}
+		</div>
+		<div style="float:right;">
+			{{view "views/ChildView2" }}
+		</div>
+		<div style="clear:both;"></div>
+	</script>
+	
+	<script type="text/template" id="template-child-view-1">
+		<h3>Hello {{name}}</h3>
+	</script>
+	
+	<script type="text/template" id="template-child-view-2">
+		<h3>This is a child view 2</h3>
+	</script>
+
+</body>
+</html>
