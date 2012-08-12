@@ -1,4 +1,4 @@
-(function(Backbone, Handlebars){
+(function(_, Backbone, Handlebars){
 
 	Handlebars.views = Handlebars.views || {};
 	Handlebars.childViewClassName = "hbars-child-view";
@@ -42,4 +42,4 @@
 		}
 	});	
 
-})(Backbone, Handlebars);
+})(_, Backbone, Handlebars);

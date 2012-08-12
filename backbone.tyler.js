@@ -1,12 +1,9 @@
-//     backbone.tyler 0.1
-//     (c) 2012 Philip Nuzhnyi
-
-(function(Backbone, Handlebars, require){
-
-	/* handlebars */
+(function(_, Backbone, Handlebars){
 
 	Handlebars.views = Handlebars.views || {};
 	Handlebars.childViewClassName = "hbars-child-view";
+	
+	/* Support for composite views */
 	
 	Handlebars.getChildView = function(id){
 		return Handlebars.views[id];
@@ -21,9 +18,9 @@
 	});
 	
 	
+	/* END */
 	
-	/* backbone */
-
+	//Composite view
 	Backbone.CompositeView = Backbone.View.extend({
 		render : function(){
 		  $(this.el).html(this.template()); 
@@ -45,4 +42,4 @@
 		}
 	});	
 
-})(Backbone, Handlebars, require);
+})(_, Backbone, Handlebars);
