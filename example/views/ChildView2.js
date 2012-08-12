@@ -1,6 +1,6 @@
 define(["Backbone","Handlebars"], function(Backbone){
   
-  var ChildView1 = Backbone.View.extend({
+  var ChildView2 = Backbone.View.extend({
     tagName:  "div",
 
     template: Handlebars.compile($("#template-child-view-2").html()),
@@ -12,5 +12,5 @@ define(["Backbone","Handlebars"], function(Backbone){
 
   });
 
-  return ChildView1;
+  return ChildView2;
 });

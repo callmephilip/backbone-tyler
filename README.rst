@@ -28,17 +28,21 @@ Tyler allows you to have your templates organized in the following way
 		{{view "views/ChildView2" }}
 	</div>
 
-'view' is a handlebars.js helper it takes on required argument that points to the view module (the same way you'd do a normal require call). View accepts a hash of additional arguments that are passed directly to your view. Snippet below shows ChildView2 that uses a name parameter passed from the parent view
+'view' is a handlebars.js helper it takes on required argument that points to the view module (the same way you'd do a normal require call). View accepts a hash of additional arguments that are passed directly to your view. Snippet below shows ChildView1 that uses a name parameter passed from the parent view
 
 	define(["Backbone","Handlebars"], function(Backbone){
 	  
 	  var ChildView1 = Backbone.View.extend({
 	    tagName:  "div",
 
-	    template: Handlebars.compile($("#template-child-view-2").html()),
+	    template: Handlebars.compile($("#template-child-view-1").html()),
+
+		initialize : function(attributes){
+			this.name = attributes.name;
+		},
 
 	    render: function() {
-	      $(this.el).html(this.template());
+	      $(this.el).html(this.template({ name : this.name }));
 	      return this.el;
 	    }
 
