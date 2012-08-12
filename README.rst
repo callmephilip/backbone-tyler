@@ -20,6 +20,7 @@ Show me some code
 ============
 Tyler allows you to have your templates organized in the following way 
 
+```html
 	<h2>This is a container</h2>		
 	<div>
 		{{view "views/ChildView1" name="Stranger" }}
@@ -27,6 +28,7 @@ Tyler allows you to have your templates organized in the following way
 	<div>
 		{{view "views/ChildView2" }}
 	</div>
+```
 
 'view' is a handlebars.js helper it takes one required argument that points to the view module (the same way you'd do a normal require call). View accepts a hash of additional arguments that are passed directly to your view. Snippet below shows ChildView1 that uses a name parameter passed from the parent view
 
