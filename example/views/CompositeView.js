@@ -1,4 +1,4 @@
-define(["jQuery", "backbone.tyler"], function($, compositeTemplate){
+define(["jQuery", "backbone.tyler"], function($){
 
 
 	var MyComposite = Backbone.CompositeView.extend({

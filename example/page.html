@@ -3,45 +3,15 @@
 	
 	<div id="container"></div>
 
-	<script type="text/javascript" src="libs/require.js"></script>
-	<script type="text/javascript">
-  		requirejs.config({
-    		//baseUrl: "/another/path",
-    		paths: {
-        		"Backbone": "./libs/backbone",
-    			"Underscore": "./libs/underscore",
-    			"jQuery": "./libs/jquery",
-    			"Handlebars": "./libs/handlebars",
-    			"backbone.tyler": "./libs/backbone.tyler"
-    		},
-    		shim: {
-    			'jQuery' : {
-    				exports: 'jQuery'
-    			},
-        		'Backbone': {
-            		deps: ['jQuery', 'Underscore'],
-            		exports: 'Backbone'
-        		},
-        		'backbone.tyler': ['Backbone',"Handlebars"]
-   
-        	},
-    		waitSeconds: 15
-  		});
-  	
-	</script>
-
-	<script type="text/javascript">
-		
-  			require(["jQuery", "views/CompositeView"],
-    			function($, CompositeView) {
-    				$(document).ready(function(){
-						$("#container").html(new CompositeView().render());
-    				});
-    			}
-  			);
 	
-	</script>
+	<script type="text/javascript" data-main="page.js"  src="libs/require.js"></script>
+	
 
+	<!-- Compiled version of the page script
+
+		<script type="text/javascript" data-main="page.compiled.js"  src="libs/require.js"></script>
+	
+	-->
 
 	<!-- 
 		Handlebars Templates 
