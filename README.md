@@ -1,12 +1,10 @@
-===============
-Backbone Tyler
-===============
+# Backbone Tyler
+
 
 Backbone.Tyler allows you to have declarative composite views in your backbone apps. Tyler is inspired by what Soundcloud have been doing with Next (http://backstage.soundcloud.com/2012/06/building-the-next-soundcloud/) as far as view rendering is concerned.
 
 
-Requirements
-============
+## Requirements
 
 Tyler has the following dependencies
 
@@ -16,8 +14,8 @@ Tyler has the following dependencies
 * Handlebars.js (https://github.com/wycats/handlebars.js)
 
 
-Show me some code
-============
+## Show me some code
+
 Tyler allows you to have your templates organized in the following way 
 
 ```html
@@ -69,8 +67,8 @@ define(["jQuery", "backbone.tyler"], function($, compositeTemplate){
 });
 ```
 
-Optimization gotcha
-============
+## Optimization gotcha
+
 If you are using optimization tool to compile your scripts and serve them in one file, please make sure you reference child views in the include section of your build configuration like so: 
 
 ```javascript
