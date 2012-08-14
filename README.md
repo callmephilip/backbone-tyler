@@ -68,3 +68,16 @@ define(["jQuery", "backbone.tyler"], function($, compositeTemplate){
 	return MyComposite;
 });
 ```
+
+Optimization gotcha
+============
+If you are using optimization tool to compile your scripts and serve them in one file, please make sure you reference child views in the include section of your build configuration like so: 
+
+```javascript
+include: [
+	"views/ChildView1",
+	"views/ChildView2"
+]
+```
+
+Check out build.js in the example directory for more details.
